@@ -16,7 +16,11 @@ public class CubeScript : Shape
         
     }
 
-    void OnMouseDown() {
-        DisplayText(5, "Square");
+    void OnMouseDown() 
+    {
+        if (!TextToDisplay.isActiveAndEnabled)
+        {
+            DisplayText(6, "Square");
+        }
     }
 }

@@ -16,7 +16,11 @@ public class CylinderScript : Shape
         
     }
 
-    void OnMouseDown() {
-        DisplayText(3, "Cylinder");
+    void OnMouseDown() 
+    {
+        if (!TextToDisplay.isActiveAndEnabled)
+        {
+            DisplayText(4, "Cylinder");
+        }  
     }
 }

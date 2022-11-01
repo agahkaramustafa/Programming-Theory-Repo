@@ -16,7 +16,11 @@ public class SphereScript : Shape
         
     }
 
-    void OnMouseDown() {
-        DisplayText(4, "Sphere");
+    void OnMouseDown() 
+    {
+        if (!TextToDisplay.isActiveAndEnabled)
+        {
+            DisplayText(2, "Sphere");
+        } 
     }
 }

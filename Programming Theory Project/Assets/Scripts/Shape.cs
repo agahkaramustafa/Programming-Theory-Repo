@@ -6,8 +6,8 @@ using TMPro;
 public class Shape : MonoBehaviour
 {
     public TextMeshProUGUI TextToDisplay;
-    public float TimeOnDisplay { get; set ; }
-    public string ShapeOnDisplay { get; set ; }
+    public float TimeOnDisplay { get; private set ; }
+    public string ShapeOnDisplay { get; private set ; }
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class Shape : MonoBehaviour
     IEnumerator enableDisableText()
     {
         TextToDisplay.enabled = true;
-        TextToDisplay.text = "This is a " + ShapeOnDisplay + " and I will close this text in " + TimeOnDisplay.ToString() + " seconds.";
+        TextToDisplay.text = "This is a " + ShapeOnDisplay.ToString() + " and I will close this text in " + TimeOnDisplay.ToString() + " seconds.";
         yield return new WaitForSeconds(TimeOnDisplay);
         TextToDisplay.enabled = false;
     }
