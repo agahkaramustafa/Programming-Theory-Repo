@@ -6,8 +6,8 @@ using TMPro;
 public class Shape : MonoBehaviour
 {
     public TextMeshProUGUI TextToDisplay;
-    public float TimeOnDisplay { get; private set ; }
-    public string ShapeOnDisplay { get; private set ; }
+    public float TimeOnDisplay { get; private set ; } // ENCAPSULATION
+    public string ShapeOnDisplay { get; private set ; } // ENCAPSULATION
 
     // Start is called before the first frame update
     void Start()
@@ -35,4 +35,5 @@ public class Shape : MonoBehaviour
         yield return new WaitForSeconds(TimeOnDisplay);
         TextToDisplay.enabled = false;
     }
+
 }

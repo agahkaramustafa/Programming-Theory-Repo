@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SphereScript : Shape
+public class SphereScript : Shape // INHERITANCE
 {
+    public Color MaterialColor { get; private set; } // ENCAPSULATION
+    public string ObjectName { get; private set; } // ENCAPSULATION
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        MaterialColor = GetComponent<MeshRenderer>().material.color;
+        ObjectName = name;
     }
 
     // Update is called once per frame
@@ -20,7 +24,15 @@ public class SphereScript : Shape
     {
         if (!TextToDisplay.isActiveAndEnabled)
         {
-            DisplayText(2, "Sphere");
+            // ABSTRACTION
+            DisplayText(2, name);
         } 
+    }
+
+    public override void DisplayText(float timeOnDisplay, string shapeName)
+    {
+        // POLYMORPHISM
+        TextToDisplay.color = MaterialColor;
+        base.DisplayText(timeOnDisplay, shapeName);
     }
 }
